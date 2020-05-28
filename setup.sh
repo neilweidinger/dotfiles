@@ -37,6 +37,10 @@ ln -snfv $DIR/config/ranger-config ~/.config/ranger
 # install fzf bash integrations
 $(brew --prefix)/opt/fzf/install
 
+# install vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
+       --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 # bash profile
 ln -snfv $DIR/bash_profile ~/.bash_profile
 source ~/.bash_profile
