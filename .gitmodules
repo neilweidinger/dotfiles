@@ -1,0 +1,6 @@
+[submodule "config/ranger-config"]
+	path = config/ranger-config
+	url = git@github.com:neilweidinger/ranger-config.git
+[submodule "config/neovim-config"]
+	path = config/neovim-config
+	url = git@github.com:neilweidinger/neovim-config.git

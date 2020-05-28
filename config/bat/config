@@ -1,0 +1,7 @@
+# Make sure less uses smartcase
+# -R -F -X options enabled by bat by default anyways
+# https://github.com/sharkdp/bat/blob/master/README.md#using-a-different-pager
+--pager "less -i -R -F -X"
+
+# Show line numbers, Git modifications and file header (but no grid)
+--style="numbers,changes,header" 
