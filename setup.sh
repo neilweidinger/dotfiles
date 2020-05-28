@@ -10,28 +10,30 @@ xcode-select -p >/dev/null 2>&1 || xcode-select --install
 brew bundle homebrew/Brewfile
 
 # tmux plugin manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+if [ ! -d "~/.tmux/plugins/tpm" ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 
 # tmux config file
-ln -sv tmux/tmux.conf ~/.tmux.conf
+ln -snfv tmux/tmux.conf ~/.tmux.conf
 
 # git config
-ln -sv git/gitconfig ~/.gitconfig
+ln -snfv git/gitconfig ~/.gitconfig
 
 # git prompt and completion scripts
-ln -sv git/git-completion.bash ~/git-completion.bash
-ln -sv git/git-prompt.sh ~/git-prompt.sh
+ln -snfv git/git-completion.bash ~/git-completion.bash
+ln -snfv git/git-prompt.sh ~/git-prompt.sh
 
 # config directories
-ln -sv config/bat ~/.config/bat
-ln -sv config/karabiner ~/.config/karabiner
-ln -sv config/neofetch ~/.config/neofetch
-ln -sv config/neovim-config ~/.config/nvim
-ln -sv config/ranger-config ~/.config/ranger
+ln -snfv config/bat ~/.config/bat
+ln -snfv config/karabiner ~/.config/karabiner
+ln -snfv config/neofetch ~/.config/neofetch
+ln -snfv config/neovim-config ~/.config/nvim
+ln -snfv config/ranger-config ~/.config/ranger
 
 # install fzf bash integrations
 $(brew --prefix)/opt/fzf/install
 
 # bash profile
-ln -sv bash_profile ~/.bash_profile
+ln -snfv bash_profile ~/.bash_profile
 source ~/.bash_profile
