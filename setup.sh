@@ -7,7 +7,7 @@ xcode-select -p >/dev/null 2>&1 || xcode-select --install
 brew --version >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # install homebrew packages, casks, etc.
-brew bundle install homebrew/Brewfile
+brew bundle install -v --file homebrew/Brewfile
 
 # tmux plugin manager
 if [ ! -d "~/.tmux/plugins/tpm" ]; then
