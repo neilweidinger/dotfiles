@@ -41,6 +41,10 @@ $(brew --prefix)/opt/fzf/install
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
        --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+# copy custom vim airline theme
+mkdir -p ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes
+cp $DIR/vim-airline-theme/luna_neil.vim ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes
+
 # bash profile
 ln -snfv $DIR/bash_profile ~/.bash_profile
 source ~/.bash_profile
