@@ -38,8 +38,10 @@ ln -snfv $DIR/config/ranger-config ~/.config/ranger
 $(brew --prefix)/opt/fzf/install
 
 # install vim-plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
-       --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+if [ ! -f "~/.local/share/nvim/site/autoload/plug.vim" ]; then
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
+           --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+fi
 
 # copy custom vim airline theme
 mkdir -p ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes
