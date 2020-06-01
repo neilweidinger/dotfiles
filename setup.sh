@@ -60,6 +60,13 @@ cp -v $DIR/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
 # install rectangle preferences
 ln -snfv $DIR/rectangle/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
 
+# install toolbox (Amazon)
+if [ ! -d "~/.toolbox" ]; then
+    `which curl` --negotiate \
+    -fLSsu: 'https://drive.corp.amazon.com/view/BuilderToolbox/toolbox-install.sh' \
+    -o /tmp/toolbox-install.sh && /bin/bash /tmp/toolbox-install.sh
+fi
+
 # bash profile
 ln -snfv $DIR/bash_profile ~/.bash_profile
 source ~/.bash_profile
