@@ -3,6 +3,7 @@
 export PATH="/usr/local/bin:HOME/.jenv/bin:$PATH"
 export PATH="$PATH:`yarn global bin`:/usr/local/nodejs/bin:/usr/local/sbin"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH" # for gnu-sed
+export PATH=$HOME/.toolbox/bin:$PATH # for toolbox (Amazon)
 #export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 #alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
 
