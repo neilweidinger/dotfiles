@@ -12,11 +12,6 @@ brew --version >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubu
 # install homebrew packages, casks, etc.
 brew bundle install -v --file homebrew/Brewfile
 
-# tmux plugin manager
-if [ ! -d "~/.tmux/plugins/tpm" ]; then
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-fi
-
 # tmux config file
 ln -snfv $DIR/tmux/tmux.conf ~/.tmux.conf
 
