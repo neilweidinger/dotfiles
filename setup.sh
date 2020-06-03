@@ -61,7 +61,7 @@ cp -v $DIR/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
 ln -snfv $DIR/rectangle/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
 
 # install toolbox (Amazon)
-if [ ! -d "~/.toolbox" ]; then
+if [ ! -d ~/".toolbox" ]; then
     `which curl` --negotiate \
     -fLSsu: 'https://drive.corp.amazon.com/view/BuilderToolbox/toolbox-install.sh' \
     -o /tmp/toolbox-install.sh && /bin/bash /tmp/toolbox-install.sh
