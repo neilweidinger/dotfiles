@@ -43,7 +43,7 @@ mkdir -p ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes
 ln -snfv $DIR/vim-airline-theme/luna_neil.vim ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes/luna_neil.vim
 
 # install patched font
-ln -snfv $DIR/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
+cp $DIR/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
 
 # bash profile
 ln -snfv $DIR/bash_profile ~/.bash_profile
