@@ -42,6 +42,10 @@ fi
 mkdir -p ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes
 ln -snfv $DIR/vim-airline-theme/luna_neil.vim ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes/luna_neil.vim
 
+# make clangd available on the command line (brew link llvm not used on purpose
+# to avoid making *all* llvm tools available, we only want clangd)
+ln -snfv /usr/local/Cellar/llvm/10.0.0_3/bin/clangd /usr/local/bin/clangd
+
 # install patched font
 cp -v $DIR/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
 
