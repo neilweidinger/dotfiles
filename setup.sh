@@ -49,6 +49,9 @@ ln -snfv /usr/local/Cellar/llvm/10.0.0_3/bin/clangd /usr/local/bin/clangd
 # install patched font
 cp -v $DIR/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
 
+# install rectangle preferences
+ln -snfv $DIR/rectangle/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
+
 # bash profile
 ln -snfv $DIR/bash_profile ~/.bash_profile
 source ~/.bash_profile
