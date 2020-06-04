@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
