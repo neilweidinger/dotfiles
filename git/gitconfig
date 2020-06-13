@@ -22,3 +22,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[alias]
+    dag = log --graph --all --pretty=format:'%C(auto)%h%d %s %<|(100) %Cgreen(%cr) %C(yellow)(%an)'
