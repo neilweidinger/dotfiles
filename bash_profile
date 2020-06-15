@@ -29,3 +29,10 @@ alias ssh='TERM=xterm-256color ssh'
 # colors for ls command
 alias ls="ls -p -G"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
+# FZF settings
+# Bindings need to be in quotes for some reason (otherwise execute command breaks)
+export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse \
+                         --margin=4%,2% --prompt='λ ' --info=inline \
+                         --bind 'ctrl-g:top' \
+                         --bind 'ctrl-e:execute(echo {+} | xargs -o nvim)+abort'"

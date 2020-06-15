@@ -17,7 +17,7 @@ ln -snfv $DIR/git/git-prompt.sh ~/git-prompt.sh
 # ln -snfv $DIR/config/bat ~/.config/bat
 # ln -snfv $DIR/config/karabiner ~/.config/karabiner
 # ln -snfv $DIR/config/neofetch ~/.config/neofetch
-# ln -snfv $DIR/config/neovim-config ~/.config/nvim
+ln -snfv $DIR/config/neovim-config ~/.config/nvim
 # ln -snfv $DIR/config/ranger-config ~/.config/ranger
 
 # install vim-plug
