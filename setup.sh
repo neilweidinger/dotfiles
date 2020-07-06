@@ -14,10 +14,15 @@ ln -snfv $DIR/git/git-completion.bash ~/git-completion.bash
 ln -snfv $DIR/git/git-prompt.sh ~/git-prompt.sh
 
 # config directories
+# rm -rf ~/.config/bat
 # ln -snfv $DIR/config/bat ~/.config/bat
+# rm -rf ~/.config/karabiner
 # ln -snfv $DIR/config/karabiner ~/.config/karabiner
+# rm -rf ~/.config/neofetch
 # ln -snfv $DIR/config/neofetch ~/.config/neofetch
+rm -rf ~/.config/nvim
 ln -snfv $DIR/config/neovim-config ~/.config/nvim
+# rm -rf ~/.config/ranger
 # ln -snfv $DIR/config/ranger-config ~/.config/ranger
 
 # install vim-plug
