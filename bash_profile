@@ -21,6 +21,10 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 lambda="λ"
 export PS1="$purple\u$green\$(__git_ps1)$cyan \W $color$lambda $reset"
 
+# use nvim for man pages
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
 # Aliases
 alias less="less -i -R"
 alias grep="grep --color"
