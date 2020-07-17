@@ -29,8 +29,9 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 lambda="λ"
 export PS1="$purple\u$green\$(__git_ps1)$cyan \W $color$lambda $reset"
 
-# use bat for man pages
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# use nvim for man pages
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 
 # env variable for ranger editor
 export EDITOR="nvim"
