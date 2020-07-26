@@ -43,6 +43,9 @@ if [ ! -f ~/".local/share/nvim/site/autoload/plug.vim" ]; then
            --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 fi
 
+# install neovim plugins
+nvim --headless +PlugInstall +qall
+
 # copy custom vim airline theme
 mkdir -p ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes
 ln -snfv $DIR/vim-airline-theme/luna_neil.vim ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes/luna_neil.vim
