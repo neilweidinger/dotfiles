@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# For global npm packages
+export PATH=~/.npm-global/bin:$PATH
+
 # Enable git tab completion
 source ~/git-completion.bash
 
