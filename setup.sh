@@ -33,6 +33,8 @@ rm -rf ~/.config/nvim
 ln -snfv $DIR/config/neovim-config ~/.config/nvim
 rm -rf ~/.config/ranger
 ln -snfv $DIR/config/ranger-config ~/.config/ranger
+rm -rf ~/.config/alacritty
+ln -snfv $DIR/config/alacritty ~/.config/alacritty
 
 # install fzf bash integrations
 $(brew --prefix)/opt/fzf/install
