@@ -1,8 +1,8 @@
 #!/bin/bash
 
 export PATH="/usr/local/bin:HOME/.jenv/bin:$PATH"
-export PATH="$PATH:`yarn global bin`:/usr/local/nodejs/bin:/usr/local/sbin"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH" # for gnu-sed
+export PATH="$HOME/.cargo/bin:$PATH" # for rustup
 #export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 #alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
 
@@ -51,8 +51,8 @@ alias ra="ranger"
 alias rac="ranger-cd"
 alias yt-1080="youtube-dl --ignore-errors -f 'bestvideo[ext=mp4][height>=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best' -o '%(title)s.%(ext)s'"
 alias yt-best="youtube-dl --ignore-errors -f 'best[ext=mp4]/best' -o '%(title)s.%(ext)s'"
-alias books-icloud="rsync -azP --exclude='.DS_Store' /Users/neilweidinger/Documents/University/Textbooks /Users/neilweidinger/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias books-school="rsync -azP --exclude='.DS_Store' /Users/neilweidinger/Documents/University/Textbooks s1759126@student.ssh.inf.ed.ac.uk:~/Documents"
+alias books-school="rsync -azP --exclude='.DS_Store' /Users/neilweidinger/Library/Mobile\ Documents/com~apple~CloudDocs s1759126@student.ssh.inf.ed.ac.uk:~/Documents"
+alias cargof="cargo fmt -- --check; cargo fmt"
 
 # Init jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
@@ -91,7 +91,7 @@ if [ -f '/Users/neilweidinger/google-cloud-sdk/completion.bash.inc' ]; then . '/
 
 # FZF settings
 # Bindings need to be in quotes for some reason (otherwise execute command breaks)
-export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse \
+export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse --cycle \
                          --margin=4%,2% --prompt='λ ' --info=inline \
                          --bind 'ctrl-g:top' \
                          --bind 'ctrl-e:execute(echo {+} | xargs -o nvim)+abort'"
