@@ -50,6 +50,8 @@ rm -rf ~/.config/ranger
 ln -snfv $DIR/config/ranger-config ~/.config/ranger
 rm -rf ~/.config/alacritty
 ln -snfv $DIR/config/alacritty ~/.config/alacritty
+rm -rf ~/.config/spotifyd
+ln -snfv $DIR/config/spotifyd ~/.config/spotifyd
 
 # install fzf bash integrations
 $(brew --prefix)/opt/fzf/install
