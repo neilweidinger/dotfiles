@@ -10,7 +10,22 @@ xcode-select -p >/dev/null 2>&1 || xcode-select --install
 brew --version >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # install homebrew packages, casks, etc.
-brew bundle install -v -f --cleanup --file homebrew/Brewfile
+while true; do
+    read -p $'Uninstall dependencies not listed in Brewfile?\n(yes/no) ' answer
+    case $answer in
+        [Yy]* )
+            brew bundle install -v -f --cleanup --file homebrew/Brewfile
+            break
+            ;;
+        [Nn]* )
+            brew bundle install -v --file homebrew/Brewfile
+            break
+            ;;
+        * )
+            echo "Please answer yes or no."
+            ;;
+    esac
+done
 
 # tmux config file
 ln -snfv $DIR/tmux/tmux.conf ~/.tmux.conf
