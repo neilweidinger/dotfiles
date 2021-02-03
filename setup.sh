@@ -22,8 +22,6 @@ ln -snfv $DIR/git/git-prompt.sh ~/git-prompt.sh
 # ln -snfv $DIR/config/neofetch ~/.config/neofetch
 rm -rf ~/.config/nvim
 ln -snfv $DIR/config/neovim-config ~/.config/nvim
-# rm -rf ~/.config/ranger
-# ln -snfv $DIR/config/ranger-config ~/.config/ranger
 
 # install vim-plug
 if [ ! -f ~/".local/share/nvim/site/autoload/plug.vim" ]; then
