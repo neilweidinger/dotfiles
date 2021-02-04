@@ -38,20 +38,24 @@ ln -snfv $DIR/git/git-completion.bash ~/git-completion.bash
 ln -snfv $DIR/git/git-prompt.sh ~/git-prompt.sh
 
 # config directories
+# manually delete any pre-existing dirs with rm because ln doesn't seem to overwrite
+# directories even with -F flag
 rm -rf ~/.config/bat
-ln -snfv $DIR/config/bat ~/.config/bat
+ln -snfFv $DIR/config/bat ~/.config/bat
 rm -rf ~/.config/karabiner
-ln -snfv $DIR/config/karabiner ~/.config/karabiner
+ln -snfFv $DIR/config/karabiner ~/.config/karabiner
 rm -rf ~/.config/neofetch
-ln -snfv $DIR/config/neofetch ~/.config/neofetch
+ln -snfFv $DIR/config/neofetch ~/.config/neofetch
 rm -rf ~/.config/nvim
-ln -snfv $DIR/config/neovim-config ~/.config/nvim
+ln -snfFv $DIR/config/neovim-config ~/.config/nvim
 rm -rf ~/.config/ranger
-ln -snfv $DIR/config/ranger-config ~/.config/ranger
+ln -snfFv $DIR/config/ranger-config ~/.config/ranger
 rm -rf ~/.config/alacritty
-ln -snfv $DIR/config/alacritty ~/.config/alacritty
+ln -snfFv $DIR/config/alacritty ~/.config/alacritty
 rm -rf ~/.config/spotifyd
-ln -snfv $DIR/config/spotifyd ~/.config/spotifyd
+ln -snfFv $DIR/config/spotifyd ~/.config/spotifyd
+rm -rf /usr/local/bin/clangd
+ln -snfFv $(find /usr/local/Cellar/llvm/*/bin -name 'clangd') /usr/local/bin/clangd
 
 # install fzf bash integrations
 $(brew --prefix)/opt/fzf/install
@@ -68,10 +72,6 @@ nvim --headless +PlugInstall +qall
 # copy custom vim airline theme
 mkdir -p ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes
 ln -snfv $DIR/vim-airline-theme/luna_neil.vim ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes/luna_neil.vim
-
-# make clangd available on the command line (brew link llvm not used on purpose
-# to avoid making *all* llvm tools available, we only want clangd)
-ln -snfv /usr/local/Cellar/llvm/10.0.0_3/bin/clangd /usr/local/bin/clangd
 
 # install patched font
 cp -v $DIR/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
