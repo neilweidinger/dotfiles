@@ -8,7 +8,7 @@
 [merge]
 	conflictstyle = diff3
 [user]
-	email = neiwein@amazon.co.uk
+	email = neilweidingern@gmail.com
 	name = Neil Weidinger
 [color "diff-highlight"]
 	oldNormal = red bold
