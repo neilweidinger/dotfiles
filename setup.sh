@@ -60,6 +60,9 @@ ln -snfFv $(find /usr/local/Cellar/llvm/*/bin -name 'clangd') /usr/local/bin/cla
 # install fzf bash integrations
 $(brew --prefix)/opt/fzf/install
 
+# start spotifyd as daemon
+brew services start spotifyd
+
 # install vim-plug
 if [ ! -f ~/".local/share/nvim/site/autoload/plug.vim" ]; then
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
