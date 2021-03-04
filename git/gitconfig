@@ -3,6 +3,7 @@
 [core]
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	attributesfile = /Users/neilweidinger/.gitattributes
 [push]
 	default = upstream
 [merge]
@@ -24,3 +25,5 @@
 	whitespace = red reverse
 [alias]
     dag = log --graph --all --pretty=format:'%C(auto)%h%d %s %>|(60)%Cgreen(%ar) %C(yellow)(%an)'
+[diff "plist"]
+	textconv = plutil -convert xml1 -o -

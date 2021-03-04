@@ -32,6 +32,8 @@ ln -snfv $DIR/tmux/tmux.conf ~/.tmux.conf
 
 # git config
 ln -snfv $DIR/git/gitconfig ~/.gitconfig
+# git attributes
+ln -snfv $DIR/git/gitattributes ~/.gitattributes
 
 # git prompt and completion scripts
 ln -snfv $DIR/git/git-completion.bash ~/git-completion.bash
