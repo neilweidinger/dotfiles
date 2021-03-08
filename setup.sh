@@ -54,16 +54,11 @@ rm -rf ~/.config/ranger
 ln -snfFv $DIR/config/ranger-config ~/.config/ranger
 rm -rf ~/.config/alacritty
 ln -snfFv $DIR/config/alacritty ~/.config/alacritty
-rm -rf ~/.config/spotifyd
-ln -snfFv $DIR/config/spotifyd ~/.config/spotifyd
 rm -rf /usr/local/bin/clangd
 ln -snfFv $(find /usr/local/Cellar/llvm/*/bin -name 'clangd') /usr/local/bin/clangd
 
 # install fzf bash integrations
 $(brew --prefix)/opt/fzf/install
-
-# start spotifyd as daemon
-brew services start spotifyd
 
 # install vim-plug
 if [ ! -f ~/".local/share/nvim/site/autoload/plug.vim" ]; then
