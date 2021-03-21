@@ -27,3 +27,5 @@
     dag = log --graph --all --pretty=format:'%C(auto)%h%d %s %>|(60)%Cgreen(%ar) %C(yellow)(%an)'
 [diff "plist"]
 	textconv = plutil -convert xml1 -o -
+[diff]
+	submodule = diff
