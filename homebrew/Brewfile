@@ -45,6 +45,7 @@ brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 cask "adoptopenjdk11"
 cask "aerial"
 cask "alacritty"
+cask "anki"
 cask "beardedspice"
 cask "java8"
 cask "karabiner-elements"
