@@ -38,3 +38,5 @@
     file-style = bold italic yellow
     file-decoration-style = yellow ol ul
     hunk-header-style = omit
+[interactive]
+    diffFilter = delta --color-only
