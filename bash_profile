@@ -39,7 +39,7 @@ export EDITOR="nvim"
 # Aliases
 alias ls="exa-ls"
 alias op="open ."
-alias diff="colordiff"
+alias diff="delta"
 alias less="less -i -R"
 alias cat="bat" # bat options in ~./config/bat/config
 alias grep="grep --color"

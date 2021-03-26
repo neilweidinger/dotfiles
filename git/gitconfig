@@ -2,7 +2,7 @@
 	ui = true
 [core]
 	editor = vim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 	attributesfile = /Users/neilweidinger/.gitattributes
 [push]
 	default = upstream
@@ -11,21 +11,30 @@
 [user]
 	email = neilweidingern@gmail.com
 	name = Neil Weidinger
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
 [alias]
     dag = log --graph --all --pretty=format:'%C(auto)%h%d %s %>|(60)%Cgreen(%ar) %C(yellow)(%an)'
+    diffs = "!f() { \
+                 git -c delta.side-by-side=true diff; \
+             }; f"
 [diff "plist"]
 	textconv = plutil -convert xml1 -o -
 [diff]
 	submodule = diff
+    colormoved = dimmed-zebra
+    colormovedws = ignore-space-change
+[delta]
+    features = decorations
+    syntax-theme = Monokai Extended Bright
+    minus-style = syntax auto
+    zero-style = dim syntax
+[delta "unobtrusive-line-numbers"]
+    line-numbers = true
+    line-numbers-left-format = "{nm:>4}┆"
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = white
+    line-numbers-right-style = white
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold italic yellow
+    file-decoration-style = yellow ol ul
+    hunk-header-style = omit
