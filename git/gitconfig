@@ -25,8 +25,11 @@
 [delta]
     features = decorations
     syntax-theme = Monokai Extended Bright
+    plus-style = syntax "#0b521e"
+    plus-emph-style = syntax "#14a83c"
     minus-style = syntax auto
     zero-style = dim syntax
+    ; side-by-side = true
 [delta "unobtrusive-line-numbers"]
     line-numbers = true
     line-numbers-left-format = "{nm:>4}┆"
