@@ -13,6 +13,9 @@
 	name = Neil Weidinger
 [alias]
     dag = log --graph --all --pretty=format:'%C(auto)%h%d %s %>|(60)%Cgreen(%ar) %C(yellow)(%an)'
+    ; https://stackoverflow.com/a/64418367/7162381
+    ; https://le0nidas.gr/2020/03/27/git-alias-with-parameters/
+    ; https://stackoverflow.com/questions/12002954/bourne-shell-send-arguments-2-to-n-to-variadic-function
     diffs = "!f() { \
                  git -c delta.side-by-side=true diff; \
              }; f"
@@ -21,25 +24,19 @@
 [diff]
 	submodule = diff
     colormoved = dimmed-zebra
-    colormovedws = ignore-space-change
 [delta]
     features = decorations
     syntax-theme = Monokai Extended Bright
+    side-by-side = true
+    navigate = true
+[delta "decorations"]
+    file-style = bold yellow
+    file-decoration-style = yellow ol ul
+    hunk-header-style = line-number italic bold
+    hunk-header-decoration-style = blue ol
     plus-style = syntax "#0b521e"
     plus-emph-style = syntax "#14a83c"
     minus-style = syntax auto
     zero-style = dim syntax
-    ; side-by-side = true
-[delta "unobtrusive-line-numbers"]
-    line-numbers = true
-    line-numbers-left-format = "{nm:>4}┆"
-    line-numbers-right-format = "{np:>4}│"
-    line-numbers-left-style = white
-    line-numbers-right-style = white
-[delta "decorations"]
-    commit-decoration-style = bold yellow box ul
-    file-style = bold italic yellow
-    file-decoration-style = yellow ol ul
-    hunk-header-style = omit
 [interactive]
     diffFilter = delta --color-only
