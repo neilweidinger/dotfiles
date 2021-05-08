@@ -23,7 +23,7 @@
 	textconv = plutil -convert xml1 -o -
 [diff]
 	submodule = diff
-    colormoved = dimmed-zebra
+    colormoved = zebra
 [delta]
     features = decorations
     syntax-theme = Monokai Extended Bright
