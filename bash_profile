@@ -3,6 +3,7 @@
 export PATH="/usr/local/bin:HOME/.jenv/bin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH" # for gnu-sed
 export PATH="$HOME/.cargo/bin:$PATH" # for rustup
+export PATH="/usr/local/sbin:$PATH" # brew asked me to do this
 #export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 #alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
 
@@ -46,7 +47,6 @@ alias grep="grep --color"
 alias ssh='TERM=xterm-256color ssh'
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias vim="/usr/local/bin/vim"
-alias mvim="open -a MacVim.app $1"
 alias ra="ranger"
 alias rac="ranger-cd"
 alias yt-1080="youtube-dl --ignore-errors -f 'bestvideo[ext=mp4][height>=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best' -o '%(title)s.%(ext)s'"
@@ -82,12 +82,6 @@ exa-ls () {
 }
 
 eval "$(jenv init -)" # for jenv
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/neilweidinger/google-cloud-sdk/path.bash.inc' ]; then . '/Users/neilweidinger/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/neilweidinger/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/neilweidinger/google-cloud-sdk/completion.bash.inc'; fi
 
 # FZF settings
 # Bindings need to be in quotes for some reason (otherwise execute command breaks)
