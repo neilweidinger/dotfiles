@@ -2,7 +2,6 @@
 
 export PATH="/usr/local/bin:HOME/.jenv/bin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH" # for gnu-sed
-export PATH="$HOME/.cargo/bin:$PATH" # for rustup
 export PATH="/usr/local/sbin:$PATH" # brew asked me to do this
 #export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 #alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
@@ -92,3 +91,6 @@ export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse --cycle 
 
 # Source FZF bash key bindings and completion
 source ~/.fzf.bash
+
+# Put here by rustup
+. "$HOME/.cargo/env"
