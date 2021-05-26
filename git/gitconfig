@@ -1,7 +1,7 @@
 [color]
 	ui = true
 [core]
-	editor = vim
+	editor = nvim
 	pager = delta
 	attributesfile = /Users/neilweidinger/.gitattributes
 [push]
