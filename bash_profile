@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# to silence ""The default interactive shell is now zsh" message
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 export PATH="/usr/local/bin:HOME/.jenv/bin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH" # for gnu-sed
 export PATH="/usr/local/sbin:$PATH" # brew asked me to do this
