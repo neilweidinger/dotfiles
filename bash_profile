@@ -10,7 +10,9 @@ export PATH="/usr/local/sbin:$PATH" # brew asked me to do this
 #alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
 
 # Enable git tab completion
-source ~/git-completion.bash
+source ~/.git-completion.bash
+# git command prompt
+source ~/.git-prompt.sh
 
 # set -o vi
 
@@ -23,8 +25,6 @@ orange="\[\033[38;5;208m\]"
 color="\[\033[38;2;251;126;20m\]"  # rgb color code
 reset="\[\033[0m\]"
 
-# Change command prompt
-source ~/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 # '\u' adds the name of the current user to the prompt
 # '\$(__git_ps1)' adds git-related stuff

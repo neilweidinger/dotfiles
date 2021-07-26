@@ -36,8 +36,8 @@ ln -snfv $DIR/git/gitconfig ~/.gitconfig
 ln -snfv $DIR/git/gitattributes ~/.gitattributes
 
 # git prompt and completion scripts
-ln -snfv $DIR/git/git-completion.bash ~/git-completion.bash
-ln -snfv $DIR/git/git-prompt.sh ~/git-prompt.sh
+ln -snfv $DIR/git/git-completion.bash ~/.git-completion.bash
+ln -snfv $DIR/git/git-prompt.sh ~/.git-prompt.sh
 
 # config directories
 # manually delete any pre-existing dirs with rm because ln doesn't seem to overwrite
