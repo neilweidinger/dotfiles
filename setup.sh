@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # get absolute path to dotfiles directory
-DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd | sed 's/\(^.*dotfiles\).*/\1/')"
+DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 # install command line tools
 xcode-select -p >/dev/null 2>&1 || xcode-select --install
@@ -28,15 +28,20 @@ while true; do
 done
 
 # tmux config file
+rm -rf ~/.tmux.conf
 ln -snfv $DIR/tmux/tmux.conf ~/.tmux.conf
 
 # git config
+rm -rf ~/.gitconfig
 ln -snfv $DIR/git/gitconfig ~/.gitconfig
 # git attributes
+rm -rf ~/.gitattributes
 ln -snfv $DIR/git/gitattributes ~/.gitattributes
 
 # git prompt and completion scripts
+rm -rf ~/.git-completion.bash
 ln -snfv $DIR/git/git-completion.bash ~/.git-completion.bash
+rm -rf ~/.git-prompt.sh
 ln -snfv $DIR/git/git-prompt.sh ~/.git-prompt.sh
 
 # config directories
