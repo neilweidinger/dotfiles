@@ -53,7 +53,7 @@ alias ra="ranger"
 alias rac="ranger-cd"
 alias yt-1080="youtube-dl --ignore-errors -f 'bestvideo[ext=mp4][height>=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best' -o '%(title)s.%(ext)s'"
 alias yt-best="youtube-dl --ignore-errors -f 'best[ext=mp4]/best' -o '%(title)s.%(ext)s'"
-alias books-school="rsync -azP --exclude='.DS_Store' /Users/neilweidinger/Library/Mobile\ Documents/com~apple~CloudDocs s1759126@student.ssh.inf.ed.ac.uk:~/Documents"
+alias books-school="rsync -azP --exclude='.DS_Store' /Users/neilweidinger/Library/Mobile\ Documents/com~apple~CloudDocs/Textbooks s1759126@student.ssh.inf.ed.ac.uk:~/Documents"
 alias cargof="cargo fmt -- --check; cargo fmt"
 
 # Init jenv

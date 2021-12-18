@@ -18,8 +18,8 @@
     ; https://stackoverflow.com/questions/12002954/bourne-shell-send-arguments-2-to-n-to-variadic-function
     ; https://stackoverflow.com/a/3322412
     diffs = "!f() { \
-                 git -c delta.side-by-side=false diff \"$@\"; \
-             }; f"
+        git -c delta.side-by-side=false diff \"$@\"; \
+    }; f"
 [diff "plist"]
 	textconv = plutil -convert xml1 -o -
 [diff]
