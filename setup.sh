@@ -63,7 +63,7 @@ rm -rf /usr/local/bin/clangd
 ln -snfFv $(find /usr/local/Cellar/llvm/*/bin -name 'clangd') /usr/local/bin/clangd
 
 # install fzf bash integrations
-$(brew --prefix)/opt/fzf/install
+$(brew --prefix)/opt/fzf/install --key-bindings --completion --update-rc --no-zsh --no-fish
 
 # install vim-plug
 if [ ! -f ~/".local/share/nvim/site/autoload/plug.vim" ]; then
