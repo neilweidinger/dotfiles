@@ -7,7 +7,7 @@
 [push]
 	default = upstream
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [user]
 	email = neilweidingern@gmail.com
 	name = Neil Weidinger
