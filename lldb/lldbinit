@@ -1,0 +1,4 @@
+command alias ts thread step-in -m this-thread
+command alias tn thread step-over -m this-thread
+command alias to thread step-out -m this-thread
+command alias tc thread continue %1

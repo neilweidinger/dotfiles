@@ -28,21 +28,29 @@ while true; do
 done
 
 # tmux config file
-rm -rf ~/.tmux.conf
 ln -snfv $DIR/tmux/tmux.conf ~/.tmux.conf
 
 # git config
-rm -rf ~/.gitconfig
 ln -snfv $DIR/git/gitconfig ~/.gitconfig
 # git attributes
-rm -rf ~/.gitattributes
 ln -snfv $DIR/git/gitattributes ~/.gitattributes
 
 # git prompt and completion scripts
-rm -rf ~/.git-completion.bash
 ln -snfv $DIR/git/git-completion.bash ~/.git-completion.bash
-rm -rf ~/.git-prompt.sh
 ln -snfv $DIR/git/git-prompt.sh ~/.git-prompt.sh
+
+# lldb configuration file
+ln -snfv $DIR/lldb/lldbinit ~/.lldbinit
+
+# automator services
+mkdir -p ~/Library/Services
+for file in $DIR/automator/Services/*
+do
+    # bash parameter expansion to get file basename
+    # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+    # use double quotes to preserve spaces
+    ln -snfv "$file" ~/Library/Services/"${file##*/}"
+done
 
 # config directories
 # manually delete any pre-existing dirs with rm because ln doesn't seem to overwrite
