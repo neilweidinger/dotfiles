@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# how to make idempotent bash scripts:
+# https://arslan.io/2019/07/03/how-to-write-idempotent-bash-scripts/
+
 # get absolute path to dotfiles directory
 DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
