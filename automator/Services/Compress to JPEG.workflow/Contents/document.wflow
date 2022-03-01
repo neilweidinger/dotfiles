@@ -106,7 +106,7 @@
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>309.000000:280.000000</string>
+				<string>309.000000:224.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Change Type of Images.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -283,12 +283,10 @@ echo "Done compressing images"</string>
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>309.000000:615.000000</string>
+				<string>309.000000:406.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -298,7 +296,7 @@ echo "Done compressing images"</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0DAE39CD-A788-4284-9909-CEDA2BB17391</key>
+		<key>1D49ADBA-92A1-4E57-A054-0556301B0FCB</key>
 		<dict>
 			<key>from</key>
 			<string>01664CAF-7BE3-4501-A5A3-ABD339371136 - 01664CAF-7BE3-4501-A5A3-ABD339371136</string>
