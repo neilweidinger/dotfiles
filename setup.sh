@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # how to make idempotent bash scripts:
 # https://arslan.io/2019/07/03/how-to-write-idempotent-bash-scripts/
@@ -94,6 +94,13 @@ cp -v $DIR/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
 
 # install rectangle preferences
 ln -snfv $DIR/rectangle/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
+
+# set default shell to brew installed bash
+# https://apple.stackexchange.com/a/292760/374139
+# https://stackoverflow.com/a/3557165
+# https://unix.stackexchange.com/a/4337/416001
+grep -qxF '/usr/local/bin/bash' /etc/shells || echo '/usr/local/bin/bash' | sudo tee -a /etc/shells > /dev/null
+chsh -s /usr/local/bin/bash
 
 # bash profile
 ln -snfv $DIR/bash_profile ~/.bash_profile
