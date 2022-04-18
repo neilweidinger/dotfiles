@@ -38,9 +38,9 @@ ln -snfv $DIR/git/gitconfig ~/.gitconfig
 # git attributes
 ln -snfv $DIR/git/gitattributes ~/.gitattributes
 
-# git prompt and completion scripts
-ln -snfv $DIR/git/git-completion.bash ~/.git-completion.bash
-ln -snfv $DIR/git/git-prompt.sh ~/.git-prompt.sh
+# add git prompt and completion scripts from brew installed git
+ln -snfv $(brew --prefix git)/etc/bash_completion.d/git-completion.bash ~/.git-completion.bash
+ln -snfv $(brew --prefix git)/etc/bash_completion.d/git-prompt.sh ~/.git-prompt.sh
 
 # lldb configuration file
 ln -snfv $DIR/lldb/lldbinit ~/.lldbinit
