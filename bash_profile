@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # to silence ""The default interactive shell is now zsh" message
 export BASH_SILENCE_DEPRECATION_WARNING=1
