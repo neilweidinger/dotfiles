@@ -31,23 +31,23 @@ while true; do
 done
 
 # tmux config file
-ln -snfv $DIR/tmux/tmux.conf ~/.tmux.conf
+ln -snfv "$DIR"/tmux/tmux.conf ~/.tmux.conf
 
 # git config
-ln -snfv $DIR/git/gitconfig ~/.gitconfig
+ln -snfv "$DIR"/git/gitconfig ~/.gitconfig
 # git attributes
-ln -snfv $DIR/git/gitattributes ~/.gitattributes
+ln -snfv "$DIR"/git/gitattributes ~/.gitattributes
 
 # add git prompt and completion scripts from brew installed git
-ln -snfv $(brew --prefix git)/etc/bash_completion.d/git-completion.bash ~/.git-completion.bash
-ln -snfv $(brew --prefix git)/etc/bash_completion.d/git-prompt.sh ~/.git-prompt.sh
+ln -snfv "$(brew --prefix git)"/etc/bash_completion.d/git-completion.bash ~/.git-completion.bash
+ln -snfv "$(brew --prefix git)"/etc/bash_completion.d/git-prompt.sh ~/.git-prompt.sh
 
 # lldb configuration file
-ln -snfv $DIR/lldb/lldbinit ~/.lldbinit
+ln -snfv "$DIR"/lldb/lldbinit ~/.lldbinit
 
 # automator services
 mkdir -p ~/Library/Services
-for file in $DIR/automator/Services/*
+for file in "$DIR"/automator/Services/*
 do
     # bash parameter expansion to get file basename
     # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
@@ -59,22 +59,22 @@ done
 # manually delete any pre-existing dirs with rm because ln doesn't seem to overwrite
 # directories even with -F flag
 rm -rf ~/.config/bat
-ln -snfFv $DIR/config/bat ~/.config/bat
+ln -snfFv "$DIR"/config/bat ~/.config/bat
 rm -rf ~/.config/karabiner
-ln -snfFv $DIR/config/karabiner ~/.config/karabiner
+ln -snfFv "$DIR"/config/karabiner ~/.config/karabiner
 rm -rf ~/.config/neofetch
-ln -snfFv $DIR/config/neofetch ~/.config/neofetch
+ln -snfFv "$DIR"/config/neofetch ~/.config/neofetch
 rm -rf ~/.config/nvim
-ln -snfFv $DIR/config/neovim-config ~/.config/nvim
+ln -snfFv "$DIR"/config/neovim-config ~/.config/nvim
 rm -rf ~/.config/ranger
-ln -snfFv $DIR/config/ranger-config ~/.config/ranger
+ln -snfFv "$DIR"/config/ranger-config ~/.config/ranger
 rm -rf ~/.config/alacritty
-ln -snfFv $DIR/config/alacritty ~/.config/alacritty
+ln -snfFv "$DIR"/config/alacritty ~/.config/alacritty
 rm -rf /usr/local/bin/clangd
-ln -snfFv $(find /usr/local/Cellar/llvm/*/bin -name 'clangd') /usr/local/bin/clangd
+ln -snfFv "$(find /usr/local/Cellar/llvm/*/bin -name 'clangd')" /usr/local/bin/clangd
 
 # install fzf bash integrations
-$(brew --prefix)/opt/fzf/install --key-bindings --completion --update-rc --no-zsh --no-fish
+"$(brew --prefix)"/opt/fzf/install --key-bindings --completion --update-rc --no-zsh --no-fish
 
 # install vim-plug
 if [ ! -f ~/".local/share/nvim/site/autoload/plug.vim" ]; then
@@ -87,13 +87,13 @@ nvim --headless +PlugInstall +qall
 
 # copy custom vim airline theme
 mkdir -p ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes
-ln -snfv $DIR/vim-airline-theme/luna_neil.vim ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes/luna_neil.vim
+ln -snfv "$DIR"/vim-airline-theme/luna_neil.vim ~/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes/luna_neil.vim
 
 # install patched font
-cp -v $DIR/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
+cp -v "$DIR"/fonts/Menlo\ Patched.ttf ~/Library/Fonts/Menlo\ Patched.ttf
 
 # install rectangle preferences
-ln -snfv $DIR/rectangle/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
+ln -snfv "$DIR"/rectangle/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
 
 # set default shell to brew installed bash
 # https://apple.stackexchange.com/a/292760/374139
@@ -103,5 +103,5 @@ grep -qxF '/usr/local/bin/bash' /etc/shells || echo '/usr/local/bin/bash' | sudo
 chsh -s /usr/local/bin/bash
 
 # bash profile
-ln -snfv $DIR/bash_profile ~/.bash_profile
+ln -snfv "$DIR"/bash_profile ~/.bash_profile
 source ~/.bash_profile
