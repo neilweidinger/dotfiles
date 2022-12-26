@@ -1,4 +1,4 @@
-config/karabiner/automatic_backups/*
+config/karabiner/automatic_backups/
 homebrew/Brewfile.lock.json
 
 ### macOS ###
