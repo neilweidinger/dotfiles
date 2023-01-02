@@ -39,8 +39,8 @@ ln -snfv "$DIR"/git/gitconfig ~/.gitconfig
 ln -snfv "$DIR"/git/gitattributes ~/.gitattributes
 
 # add git prompt and completion scripts from brew installed git
-ln -snfv "$(brew --prefix git)"/etc/bash_completion.d/git-completion.bash ~/.git-completion.bash
-ln -snfv "$(brew --prefix git)"/etc/bash_completion.d/git-prompt.sh ~/.git-prompt.sh
+ln -snfv "$(brew --prefix --installed git)"/etc/bash_completion.d/git-completion.bash ~/.git-completion.bash
+ln -snfv "$(brew --prefix --installed git)"/etc/bash_completion.d/git-prompt.sh ~/.git-prompt.sh
 
 # lldb configuration file
 ln -snfv "$DIR"/lldb/lldbinit ~/.lldbinit
@@ -74,7 +74,7 @@ rm -rf /usr/local/bin/clangd
 ln -snfFv "$(find /usr/local/Cellar/llvm/*/bin -name 'clangd')" /usr/local/bin/clangd
 
 # install fzf bash integrations
-"$(brew --prefix)"/opt/fzf/install --key-bindings --completion --update-rc --no-zsh --no-fish
+"$(brew --prefix --installed fzf)"/install --key-bindings --completion --update-rc --no-zsh --no-fish
 
 # install vim-plug
 if [ ! -f ~/".local/share/nvim/site/autoload/plug.vim" ]; then
