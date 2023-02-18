@@ -9,9 +9,8 @@ export PATH="/usr/local/sbin:$PATH" # brew asked me to do this
 #export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 #alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
 
-# Enable git tab completion
+# Enable git prompt and tab completion
 source ~/.git-completion.bash
-# git command prompt
 source ~/.git-prompt.sh
 
 # colors!
@@ -45,21 +44,11 @@ alias less="less -i -R"
 alias cat="bat" # bat options in ~./config/bat/config
 alias grep="grep --color"
 alias ssh='TERM=xterm-256color ssh'
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias vim="/usr/local/bin/vim"
 alias ra="ranger"
 alias rac="ranger-cd"
-alias yt-1080="youtube-dl --ignore-errors -f 'bestvideo[ext=mp4][height>=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best' -o '%(title)s.%(ext)s'"
-alias yt-best="youtube-dl --ignore-errors -f 'best[ext=mp4]/best' -o '%(title)s.%(ext)s'"
-alias books-school="rsync -azP --exclude='.DS_Store' /Users/neilweidinger/Library/Mobile\ Documents/com~apple~CloudDocs/Textbooks s1759126@student.ssh.inf.ed.ac.uk:~/Documents"
-alias cargof="cargo fmt -- --check; cargo fmt"
 
 # Init jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
-# colors for ls command
-# alias ls="ls -p -G"
-# export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 ranger-cd() {
        tempfile='/tmp/chosendir'
@@ -95,3 +84,5 @@ source ~/.fzf.bash
 
 # Put here by rustup
 . "$HOME/.cargo/env"
+
+source /Users/neilweidinger/.config/broot/launcher/bash/br

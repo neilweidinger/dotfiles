@@ -4,7 +4,7 @@
 # https://arslan.io/2019/07/03/how-to-write-idempotent-bash-scripts/
 
 # get absolute path to dotfiles directory
-DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 
 # install command line tools
 xcode-select -p >/dev/null 2>&1 || xcode-select --install
@@ -14,7 +14,7 @@ brew --version >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubu
 
 # install homebrew packages, casks, etc.
 while true; do
-    read -p $'Uninstall dependencies not listed in Brewfile?\n(yes/no) ' answer
+    read -rp $'Uninstall dependencies not listed in Brewfile?\n(yes/no) ' answer
     case $answer in
         [Yy]* )
             brew bundle install -v -f --cleanup --file homebrew/Brewfile
@@ -30,20 +30,27 @@ while true; do
     esac
 done
 
-# tmux config file
-ln -snfv "$DIR"/tmux/tmux.conf ~/.tmux.conf
+# config files found in `~/.config`
+mkdir -p ~/.config
+ln -snfFv "$DIR"/config/alacritty ~/.config/alacritty
+ln -snfFv "$DIR"/config/bat ~/.config/bat
+ln -snfFv "$DIR"/config/karabiner ~/.config/karabiner
+ln -snfFv "$DIR"/config/neofetch ~/.config/neofetch
+ln -snfFv "$DIR"/config/neovim-config ~/.config/nvim
+ln -snfFv "$DIR"/config/ranger-config ~/.config/ranger
 
-# git config
-ln -snfv "$DIR"/git/gitconfig ~/.gitconfig
-# git attributes
-ln -snfv "$DIR"/git/gitattributes ~/.gitattributes
+# other symlinks not in `~/.config`
+ln -snfFv "$(brew --prefix --installed llvm)"/bin/clangd /usr/local/bin/clangd
+ln -snfFv "$DIR"/bash_profile ~/.bash_profile
+ln -snfFv "$DIR"/git/gitattributes ~/.gitattributes
+ln -snfFv "$DIR"/git/gitconfig ~/.gitconfig
+ln -snfFv "$DIR"/lldb/lldbinit ~/.lldbinit
+ln -snfFv "$DIR"/tmux/tmux.conf ~/.tmux.conf
 
-# add git prompt and completion scripts from brew installed git
-ln -snfv "$(brew --prefix --installed git)"/etc/bash_completion.d/git-completion.bash ~/.git-completion.bash
-ln -snfv "$(brew --prefix --installed git)"/etc/bash_completion.d/git-prompt.sh ~/.git-prompt.sh
-
-# lldb configuration file
-ln -snfv "$DIR"/lldb/lldbinit ~/.lldbinit
+# we do this here once in `setup.sh` to avoid having to do the costy `brew --prefix` on each source
+# of `.bash_profile`
+ln -snfFv "$(brew --prefix --installed git)"/etc/bash_completion.d/git-completion.bash  ~/.git-completion.bash
+ln -snfFv "$(brew --prefix --installed git)"/etc/bash_completion.d/git-prompt.sh ~/.git-prompt.sh
 
 # automator services
 mkdir -p ~/Library/Services
@@ -52,26 +59,8 @@ do
     # bash parameter expansion to get file basename
     # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
     # use double quotes to preserve spaces
-    ln -snfv "$file" ~/Library/Services/"${file##*/}"
+    ln -snfFv "$file" ~/Library/Services/"${file##*/}"
 done
-
-# config directories
-# manually delete any pre-existing dirs with rm because ln doesn't seem to overwrite
-# directories even with -F flag
-rm -rf ~/.config/bat
-ln -snfFv "$DIR"/config/bat ~/.config/bat
-rm -rf ~/.config/karabiner
-ln -snfFv "$DIR"/config/karabiner ~/.config/karabiner
-rm -rf ~/.config/neofetch
-ln -snfFv "$DIR"/config/neofetch ~/.config/neofetch
-rm -rf ~/.config/nvim
-ln -snfFv "$DIR"/config/neovim-config ~/.config/nvim
-rm -rf ~/.config/ranger
-ln -snfFv "$DIR"/config/ranger-config ~/.config/ranger
-rm -rf ~/.config/alacritty
-ln -snfFv "$DIR"/config/alacritty ~/.config/alacritty
-rm -rf /usr/local/bin/clangd
-ln -snfFv "$(find /usr/local/Cellar/llvm/*/bin -name 'clangd')" /usr/local/bin/clangd
 
 # install fzf bash integrations
 "$(brew --prefix --installed fzf)"/install --key-bindings --completion --update-rc --no-zsh --no-fish
@@ -102,6 +91,5 @@ ln -snfv "$DIR"/rectangle/com.knollsoft.Rectangle.plist ~/Library/Preferences/co
 grep -qxF '/usr/local/bin/bash' /etc/shells || echo '/usr/local/bin/bash' | sudo tee -a /etc/shells > /dev/null
 chsh -s /usr/local/bin/bash
 
-# bash profile
-ln -snfv "$DIR"/bash_profile ~/.bash_profile
+# source `~/.bash_profile` as final step
 source ~/.bash_profile
